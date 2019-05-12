@@ -4,8 +4,8 @@ import React from 'react'
 const NavBar = () => {
 
     return (
-        <nav className="navbar navbar-light bg-light">
-            <div>Frauennotruf - Terminübersicht</div>
+        <nav className="navbar navbar-light" style={{ backgroundColor: "aliceblue" }}>
+            <div style={{ fontSize: "20px" }} >Frauennotruf - Terminübersicht</div>
         </nav>
     );
 };

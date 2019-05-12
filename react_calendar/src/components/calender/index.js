@@ -12,7 +12,6 @@ export default class Calender extends React.Component {
         showYearPopup: false
     }
 
-
     constructor(props) {
         super(props);
         this.width = props.width || "500px";
@@ -21,7 +20,6 @@ export default class Calender extends React.Component {
     }
 
     weekdays = moment.weekdays();
-    weekdaysShort = moment.weekdaysShort();
     months = moment.months();
 
     year = () => {
@@ -34,10 +32,6 @@ export default class Calender extends React.Component {
 
     daysInMonth = () => {
         return this.state.dateContext.daysInMonth();
-    };
-
-    currentDate = () => {
-        return this.state.dateContext.get("Date");
     };
 
     currentDay = () => {
@@ -66,12 +60,12 @@ export default class Calender extends React.Component {
                 {popup}
             </div>
         );
-    }
+    };
 
     onSelectChange = (e, data) => {
         this.setMonth(data);
         this.props.onMonthChange && this.props.onMonthChange();
-    }
+    };
 
     setMonth = (month) => {
         let monthNo = this.months.indexOf(month);
@@ -80,7 +74,7 @@ export default class Calender extends React.Component {
         this.setState({
             dateContext: dateContext
         });
-    }
+    };
 
     MonthNav = () => {
         return (
@@ -91,13 +85,13 @@ export default class Calender extends React.Component {
                 }
             </div>
         );
-    }
+    };
 
     onChangeMonth= (e, month) => {
         this.setState({
             showMonthPopup: !this.state.showMonthPopup
         });
-    }
+    };
 
     YearNav = () => {
         return (
@@ -113,18 +107,18 @@ export default class Calender extends React.Component {
                 {this.year()}
             </div>
         );
-    }
+    };
 
     showYearEditor = () => {
         this.setState({
             showYearNav: true
         });
-    }
+    };
 
     onYearChange = (e) => {
         this.setYear(e.target.value);
         this.props.onYearChange && this.props.onYearChange(e);
-    }
+    };
 
     setYear = (year) => {
         let dateContext = Object.assign({}, this.state.dateContext);
@@ -132,7 +126,7 @@ export default class Calender extends React.Component {
         this.setState({
             dateContext: dateContext
         })
-    }
+    };
 
     onKeyUpYear = (e) => {
         if (e.which === 13  || e.which === 27) {
@@ -141,7 +135,11 @@ export default class Calender extends React.Component {
                 showYearNav: false
             })
         }
-    }
+    };
+
+    onAddEntryClick = (e, day) => {
+        this.props.onAddEntryClick && this.props.onAddEntryClick(e, day);
+    };
 
     render() {
         let weekdays = this.weekdays.map((day) => {
@@ -152,7 +150,10 @@ export default class Calender extends React.Component {
 
         let blanks = [];
         for (let i = 0; i < this.firstDayOfMonth(); i++) {
-            blanks.push(<td className="empty_string">{""}</td>);
+            blanks.push(<td key={i * 80} className="emptySlot">
+                    {""}
+                </td>
+            );
         }
 
         let daysInMonth = [];
@@ -160,15 +161,15 @@ export default class Calender extends React.Component {
             let className = (d == this.currentDay() ? "day current-day": "day");
             daysInMonth.push(
                 <td key={d} >
-                    <div className={className}>{d} </div>
-
+                    <div className={className}>{d}</div>
+                    <div className="add-entry" onClick={(e) => {this.onAddEntryClick(e, d)}}>+</div>
+                    <div className="clear"/>
                     <hr/>
                     <div className="black">
                         <ul>
                             <li>entry</li>
                             <li>entry</li>
                             <li>Test</li>
-
                         </ul>
                     </div>
                 </td>
@@ -207,10 +208,9 @@ export default class Calender extends React.Component {
             <div className="container">
                 <div className="chooser-display">
                     <this.MonthNav />
-                    {" "}
                     <this.YearNav />
                 </div>
-                <div className="clear"></div>
+                <div className="clear"/>
                 <div className="calender-body">
                     <table className="table">
                         <thead>

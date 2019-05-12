@@ -38,6 +38,10 @@ ul {
     padding-inline-start: 15px;
 }
 
+.table th, .table td {
+    border: 1px solid #dee2e6;
+}
+
 /* Month Popup */
 .label-month {
     cursor: pointer;
@@ -45,10 +49,17 @@ ul {
     font-weight: bold;
     padding-left: 5px;
     background-color: turquoise;
-    border-radius: 100px;
+    border-radius: 10px 0px 0px 10px;
+    text-align: center;
 }
 
-.label-month:hover {
+.year-display {
+    border-radius: 0px 10px 10px 0px;
+    background-color: turquoise;
+    text-align: center;
+}
+
+.label-month:hover, .year-display:hover {
     background-color: darkturquoise;
 }
 
@@ -57,7 +68,7 @@ ul {
     padding: 5px;
     background: white;
     border: 1px solid #383c3f;
-    width: 150px;
+    width: 390px;
     font-size: 15px;
 }
 
@@ -82,4 +93,16 @@ ul {
 
 .calender-body {
     margin-top: 10px;
+}
+
+/* Day and Entry */
+.day {
+    float: left;
+}
+
+.add-entry {
+    float: right;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
 }

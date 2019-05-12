@@ -3,18 +3,19 @@ import './App.css';
 import Calender from './components/calender/';
 import NavBar from './components/navbar';
 
-const style = {
-    position: "relative",
-    margin: "50px auto"
-}
 
 class App extends Component {
+    onAddEntryClick = (e, day) => {
+        alert(day);
+    }
+
     render() {
         return (
             <div className="App">
                 <NavBar />
                 <hr/>
-                <Calender style={style} />
+                <Calender
+                          onAddEntryClick={(e, day)=> this.onAddEntryClick(e, day)}/>
             </div>
         );
     }
