@@ -1,0 +1,51 @@
+header {
+  display: block;
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  color: white;
+}
+
+#headerButtons {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  vertical-align:center;
+}
+
+.navButton {
+  float: left;
+  background-color:grey;
+  height: 100%;
+}
+
+.navButton > a {
+  color:white;
+  margin-top:5px;
+}
+
+footer {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+}
+
+#loading_overlay {
+  position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:black;
+    opacity: 0.95;
+    text-align: center;
+    padding-top: 10%;
+}
+
+#loading_text {
+  color: white;
+}

@@ -1,0 +1,85 @@
+.calender-container {
+    border: 1px solid red;
+    text-align: -webkit-center;
+}
+
+.current-day {
+    background-color: turquoise;
+    /* padding: 5px; */
+    border-radius: 100px;
+    width: 35px;
+    text-align: center;
+}
+
+.clear {
+    clear:both;
+}
+
+span.black {
+    color: #8c8c8c;
+}
+
+hr {
+    margin-top: 0.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.table th, .table td {
+    font-size: 12px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 15px;
+}
+
+/* Month Popup */
+.label-month {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 5px;
+    background-color: turquoise;
+    border-radius: 100px;
+}
+
+.label-month:hover {
+    background-color: darkturquoise;
+}
+
+.month-popup {
+    position: absolute;
+    padding: 5px;
+    background: white;
+    border: 1px solid #383c3f;
+    width: 150px;
+    font-size: 15px;
+}
+
+.month-display {
+    width: 200px;
+    float: left;
+    height: 30px;
+    line-height: 28px;
+}
+
+.year-display {
+    width: 200px;
+    float:left;
+    height: 30px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.weekdays-td {
+    background-color: aliceblue;
+}
+
+.calender-body {
+    margin-top: 10px;
+}
