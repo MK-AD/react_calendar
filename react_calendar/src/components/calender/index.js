@@ -2,6 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import './calender.css'
 import 'moment/locale/de'
+
+
 moment.locale('de')
 
 export default class Calender extends React.Component {
@@ -9,7 +11,8 @@ export default class Calender extends React.Component {
         dateContext: moment(),
         today: moment(),
         showMonthPopup: false,
-        showYearPopup: false
+        showYearPopup: false,
+        displayAddEvent: false
     }
 
     constructor(props) {
@@ -19,7 +22,7 @@ export default class Calender extends React.Component {
         this.style.width = this.width; // add this
     }
 
-    weekdays = moment.weekdays();
+    weeknames = moment.weekdays();
     months = moment.months();
 
     year = () => {
@@ -47,7 +50,7 @@ export default class Calender extends React.Component {
     SelectList = (props) => {
         let popup = props.data.map((data) => {
             return (
-                <div key={data}>
+                <div className="month-overview" key={data}>
                     <a href="#" onClick={(e) => {this.onSelectChange(e, data)}}>
                         {data}
                     </a>
@@ -141,16 +144,27 @@ export default class Calender extends React.Component {
         this.props.onAddEntryClick && this.props.onAddEntryClick(e, day);
     };
 
+    WeekNames = () => {
+        return (
+            <div className="month-display label-month " onClick={(e)=> {this.onChangeMonth(e, this.month())}}>
+                {this.month()}
+                {this.state.showMonthPopup &&
+                <this.SelectList data={this.months} />
+                }
+            </div>
+        );
+    };
+
     render() {
-        let weekdays = this.weekdays.map((day) => {
+        let weeknames = this.weeknames.map((day) => {
             return (
-                <td className="weekdays-td" key={day}>{day}</td>
+                <th className="weekdays-td col-sm-2" key={day}>{day}</th>
             );
         });
 
         let blanks = [];
         for (let i = 0; i < this.firstDayOfMonth(); i++) {
-            blanks.push(<td key={i * 80} className="emptySlot">
+            blanks.push(<td key={i * 80} className="emptySlot col-sm-2">
                     {""}
                 </td>
             );
@@ -160,7 +174,7 @@ export default class Calender extends React.Component {
         for(let d = 1; d <= this.daysInMonth(); d++) {
             let className = (d == this.currentDay() ? "day current-day": "day");
             daysInMonth.push(
-                <td key={d} >
+                <td className="col-sm-2" key={d} >
                     <div className={className}>{d}</div>
                     <div className="add-entry" onClick={(e) => {this.onAddEntryClick(e, d)}}>+</div>
                     <div className="clear"/>
@@ -198,7 +212,7 @@ export default class Calender extends React.Component {
 
         let trElements = rows.map((d, i) => {
            return (
-              <tr key={i*100}>
+              <tr className="d-flex" key={i*100}>
                   {d}
               </tr>
            );
@@ -211,17 +225,17 @@ export default class Calender extends React.Component {
                     <this.YearNav />
                 </div>
                 <div className="clear"/>
-                <div className="calender-body">
+
+                <div className="clear"/>
+                <div className="table-responsive calender-body">
                     <table className="table">
                         <thead>
-                            <tr className="calendar-header">
+                            <tr className="d-flex calendar-header">
+                                {weeknames}
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            {weekdays}
-                        </tr>
-                        {trElements}
+                            {trElements}
                         </tbody>
                     </table>
                 </div>
