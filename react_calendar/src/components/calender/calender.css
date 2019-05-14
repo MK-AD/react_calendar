@@ -38,6 +38,10 @@ ul {
     min-width: 80px;
 }
 
+.table td {
+    min-height: 140px;
+}
+
 /* Month Popup */
 .label-month {
     cursor: pointer;
@@ -73,16 +77,13 @@ ul {
     background-color: turquoise;
 }
 
-.month-overview > a:hover {
+.month-overview:hover {
     background-color: darkturquoise;
 }
 
 .month-overview > a {
     color: #383c3f;
 }
-
-
-
 
 .month-display {
     width: 200px;
@@ -131,9 +132,35 @@ ul {
 .col-sm-2 {
     flex: 0 0 14%;
     max-width: 14%;
+
 }
 
 .add-event-entry {
     z-index: 1000;
 
+}
+
+
+/* Person Colors */
+.event {
+    margin: 2px 0 2px 0;
+    cursor: pointer;
+}
+
+.Anna {
+    background-color: antiquewhite;
+    padding: 0 0 0 5px;
+    border-radius: 5px;
+}
+
+.Lisa {
+    background-color: mediumaquamarine;
+    padding: 0 0 0 5px;
+    border-radius: 5px;
+}
+
+.Marie {
+    background-color: coral;
+    padding: 0 0 0 5px;
+    border-radius: 5px;
 }

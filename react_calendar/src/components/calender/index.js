@@ -41,6 +41,10 @@ export default class Calender extends React.Component {
         return this.state.dateContext.format("D");
     };
 
+    currentMonth = () => {
+        return this.state.dateContext.format("M");
+    };
+
     firstDayOfMonth = () => {
         let dateContext = this.state.dateContext;
         let firstDay = moment(dateContext).startOf('month').format('d');
@@ -50,11 +54,11 @@ export default class Calender extends React.Component {
     SelectList = (props) => {
         let popup = props.data.map((data) => {
             return (
-                <div className="month-overview" key={data}>
+                <a href="#" onClick={(e) => {this.onSelectChange(e, data)}}><div className="month-overview" key={data}>
                     <a href="#" onClick={(e) => {this.onSelectChange(e, data)}}>
                         {data}
                     </a>
-                </div>
+                </div></a>
             );
         });
 
@@ -171,7 +175,31 @@ export default class Calender extends React.Component {
         }
 
         let daysInMonth = [];
+
         for(let d = 1; d <= this.daysInMonth(); d++) {
+            const data = [
+                {id: 2, title: 'Lisa - Raum 4', year: '2019', month: '5', content: 'You can install React from npm.' , prio: 'Lisa' , type:'event'},
+                {id: 2, title: 'Marie - Raum 3',year: '2019', month: '5', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
+                {id: 5, title: 'Marie - Raum 3',year: '2019', month: '5', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
+                {id: 5, title: 'Anna - Raum 2',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Anna' , type:'event'},
+                {id: 10, title: 'Anna - Raum 2',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Anna' , type:'event'},
+                {id: 14, title: 'Lisa - Raum 4',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Lisa' , type:'event'},
+                {id: 14, title: 'Anna - Telefon',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Anna' , type:'event'},
+                {id: 17, title: 'Anna - Telefon',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Anna' , type:'event'},
+                {id: 23, title: 'Marie - Raum 3',year: '2019', month: '5', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
+
+                {id: 3, title: 'Marie - Raum 4', year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
+                {id: 5, title: 'Marie - Raum 3',year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
+                {id: 5, title: 'Anna - Raum 1',year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Anna' , type:'event'},
+                {id: 5, title: 'Lisa - Raum 2',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Lisa' , type:'event'},
+                {id: 8, title: 'Anna - Raum 3',year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Anna' , type:'event'},
+                {id: 11, title: 'Marie - Raum 2',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Marie' , type:'event'},
+                {id: 19, title: 'Lisa - Raum 4',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Lisa' , type:'event'},
+                {id: 23, title: 'Marie - Telefon',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Marie' , type:'event'},
+                {id: 25, title: 'Marie - Telefon',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Marie' , type:'event'},
+                {id: 28, title: 'Anna - Raum 3',year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Anna' , type:'event'},
+            ];
+
             let className = (d == this.currentDay() ? "day current-day": "day");
             daysInMonth.push(
                 <td className="col-sm-2" key={d} >
@@ -180,11 +208,14 @@ export default class Calender extends React.Component {
                     <div className="clear"/>
                     <hr/>
                     <div className="black">
-                        <ul>
-                            <li>entry</li>
-                            <li>entry</li>
-                            <li>Test</li>
-                        </ul>
+                        {data.map(key => {
+                            if (d === key.id && this.currentMonth() === key.month && this.year() === key.year) {
+                                return (
+                                    <div className={[key.prio, key.type].join(" ")}> {key.title} </div>
+                                );
+
+                            }
+                        })}
                     </div>
                 </td>
             )
