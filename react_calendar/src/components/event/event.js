@@ -1,26 +1,45 @@
 import React, { Component } from 'react'
+import './event.css'
 
 class Event extends Component {
-    handleSubmit = () => {
-
+    constructor(props)  {
+        super(props)
+        this.state = {
+            title: '',
+            year: '',
+            month: ''
+        }
     }
 
-    handleCancel = () => {
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const data = this.state
+    }
 
+    handleInputChange = (event) => {
+        event.preventDefault()
+
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
 
     render() {
+        const greeting = 'Welcome to React';
+
         return(
-            <div className="a">
-                <div className="b">
-                    <h1>Neuen Eintrag vornehmen</h1>
-                    <form >
-                        <p><input type='text' placeholder='Your Name' name='name'/></p>
-                        <p><button>Insert Entry</button></p>
+            <div >
+                    <h4>Neuen Eintrag vornehmen</h4>
+                    <form onSubmit={this.handleSubmit} >
+                        <p>Title: <input type='text' placeholder='Your Name' name='title' onChange={this.handleInputChange} /></p>
+                        <p>Year: <input type='text' placeholder='Your Name' name='year' onChange={this.handleInputChange} /></p>
+                        <p>Month: <input type='text' placeholder='Your Name' name='month' onChange={this.handleInputChange} /></p>
+                        <p><button onClick={this.props.data(this.state)}>Insert Entry</button></p>
 
                     </form>
-                </div>
+                {greeting}
             </div>
+
         );
     }
 

@@ -5,24 +5,42 @@ import NavBar from './components/navbar';
 import Event from './components/event/event'
 
 
+
 class App extends Component {
     state = {
-        displayAddEvent: false
+        displayAddEvent: false,
+        event_entry_values: ''
     }
 
-    onAddEntryClick = (e, day) => {
+    update(value){
+        return () => {
+            this.setState({
+                event_entry_values: value,
+            });
+        }
+    }
+
+    onAddEntryClick = () => {
         this.setState({
             displayAddEvent: !this.state.displayAddEvent
         })
-        console.log(this.state.displayAddEvent)
+    }
+
+    closeEntry = () => {
+        this.setState({
+            displayAddEvent: false
+        })
     }
 
     render() {
+        console.log(this.state.event_entry_values)
         let questions = null;
         if ( this.state.displayAddEvent ) {
             questions = (
                 <div className="add-event-entry">
-                    <Event />
+                    <div className="closeEntryX" onClick={this.closeEntry}>X</div>
+                    <div className="clear"/>
+                    <Event data={this.update.bind(this)}/>
                 </div>
             )
         }
@@ -32,7 +50,7 @@ class App extends Component {
                 <NavBar />
                 <hr/>
                 {questions}
-                <Calender onAddEntryClick={(e, day)=> this.onAddEntryClick(e, day)}/>
+                <Calender onAddEntryClick={(e, day)=> this.onAddEntryClick(e, day)} entry_values={this.state.event_entry_values}/>
             </div>
         );
     }
