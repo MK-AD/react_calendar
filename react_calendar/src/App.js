@@ -9,20 +9,27 @@ import Event from './components/event/event'
 class App extends Component {
     state = {
         displayAddEvent: false,
-        event_entry_values: ''
+        event_entry_values: '',
+        day: '',
+        current_month : ''
     }
 
     update(value){
+        console.log(value)
         return () => {
             this.setState({
                 event_entry_values: value,
+                displayAddEvent: value.displayAddEvent
             });
         }
     }
 
-    onAddEntryClick = () => {
+    onAddEntryClick = (e, day, month, year) => {
         this.setState({
-            displayAddEvent: !this.state.displayAddEvent
+            displayAddEvent: !this.state.displayAddEvent,
+            day: day,
+            month: month,
+            year: year
         })
     }
 
@@ -40,7 +47,7 @@ class App extends Component {
                 <div className="add-event-entry">
                     <div className="closeEntryX" onClick={this.closeEntry}>X</div>
                     <div className="clear"/>
-                    <Event data={this.update.bind(this)}/>
+                    <Event data={this.update.bind(this)} current_day={this.state.day} current_month = {this.state.month} current_year = {this.state.year} />
                 </div>
             )
         }
@@ -50,7 +57,7 @@ class App extends Component {
                 <NavBar />
                 <hr/>
                 {questions}
-                <Calender onAddEntryClick={(e, day)=> this.onAddEntryClick(e, day)} entry_values={this.state.event_entry_values}/>
+                <Calender onAddEntryClick={(e, day, month, year)=> this.onAddEntryClick(e, day, month, year)} entry_values={this.state.event_entry_values}/>
             </div>
         );
     }
