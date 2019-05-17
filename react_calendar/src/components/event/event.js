@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import uuidv1 from  'uuid/v1';
 import './event.css'
 
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
 class Event extends Component {
     constructor(props)  {
         super(props)
@@ -26,6 +29,7 @@ class Event extends Component {
 
     handleInputChange = (event) => {
         event.preventDefault()
+
         this.setState({
             [event.target.name]: event.target.value,
             id: this.props.current_day,
@@ -40,6 +44,17 @@ class Event extends Component {
         })
     }
 
+    addEventEntry() {
+        let data = ["asdsa"]
+        let current = cookies.get("db", { path: '/' });
+        if(!current) {
+            current = [];
+        }
+        current.push(data);
+        cookies.set("db", current, { path: '/' } );
+        this.props.data(this.state)
+    }
+
     render() {
         return(
             <div >
@@ -47,7 +62,7 @@ class Event extends Component {
                     <form onSubmit={this.handleSubmit} >
                         <p>Tätigkeit: <input type='text' placeholder='Your Name' name='title' onChange={this.handleInputChange} /></p>
                         <p>Person: <input type='text' placeholder='Your Name' name='prio' onChange={this.handleInputChange} /></p>
-                        <p><button onClick={this.props.data(this.state)}>Insert Entry</button></p>
+                        <p><button onClick={this.addEventEntry.bind(this)}>Insert Entry</button></p>
                     </form>
             </div>
         );

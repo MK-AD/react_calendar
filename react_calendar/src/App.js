@@ -4,8 +4,6 @@ import Calender from './components/calender/';
 import NavBar from './components/navbar';
 import Event from './components/event/event'
 
-
-
 class App extends Component {
     state = {
         displayAddEvent: false,
@@ -15,7 +13,8 @@ class App extends Component {
     }
 
     update(value){
-        console.log(value)
+        console.log(value.displayAddEvent)
+        //console.log(value)
         return () => {
             this.setState({
                 event_entry_values: value,
@@ -25,6 +24,7 @@ class App extends Component {
     }
 
     onAddEntryClick = (e, day, month, year) => {
+
         this.setState({
             displayAddEvent: !this.state.displayAddEvent,
             day: day,
@@ -40,7 +40,7 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.event_entry_values)
+        //console.log(this.state.event_entry_values)
         let questions = null;
         if ( this.state.displayAddEvent ) {
             questions = (

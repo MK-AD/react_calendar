@@ -3,6 +3,8 @@ import moment from 'moment';
 import './calender.css'
 import 'moment/locale/de'
 
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 moment.locale('de')
 
@@ -43,6 +45,11 @@ export default class Calender extends React.Component {
         this.width = props.width || "500px";
         this.style = props.style || {};
         this.style.width = this.width; // add this
+    }
+
+    componentDidMount() {
+        console.log("FOOBAR ")
+        console.log(this.props.entry_values)
     }
 
     weeknames = moment.weekdays();
@@ -169,13 +176,6 @@ export default class Calender extends React.Component {
 
     onAddEntryClick = (e, day, month, year) => {
         this.props.onAddEntryClick && this.props.onAddEntryClick(e, day, month, year);
-        console.log("tt"+ this.props.entry_values.new_entry);
-        /*
-        let data_copy = this.state.data;
-        data_copy.push(this.props.entry_values);
-        this.setState({
-            data: data_copy*/
-
     };
 
     WeekNames = () => {
@@ -190,6 +190,14 @@ export default class Calender extends React.Component {
     };
 
     render() {
+        /* Deal with the copy and the original data > this infinite loop ....
+        let data_copy = this.state.data;
+        data_copy.push(this.props.entry_values);
+        this.setState({
+            data: data_copy
+        });*/
+        console.log(cookies.get("db", { path: '/' }))
+
 
         let weeknames = this.weeknames.map((day) => {
             return (
@@ -206,14 +214,6 @@ export default class Calender extends React.Component {
         }
 
         let daysInMonth = [];
-
-        /* Deal with the copy and the original data > this infinite loop ....
-        let data_copy = this.state.data;
-        data_copy.push(this.props.entry_values);
-        this.setState({
-            data: data_copy
-        });*/
-
         for(let d = 1; d <= this.daysInMonth(); d++) {
 
             let className = (d == this.currentDay() ? "day current-day": "day");
