@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import './calender.css'
 import 'moment/locale/de'
-
+import uuidv1 from  'uuid/v1';
 
 moment.locale('de')
 
@@ -14,27 +14,35 @@ export default class Calender extends React.Component {
         showYearPopup: false,
         displayAddEvent: false,
         data: [
-            {ig: '31a89b20-77da-11e9-b10b-e5acc7269da7', id: 2, title: 'Lisa - Raum 4', year: '2019', month: '5', content: 'You can install React from npm.' , prio: 'Lisa' , type:'event'},
-            {ig: '31a89b20-3aft-11e9-b10b-e5acc7269sa7', id: 2, title: 'Marie - Raum 3',year: '2019', month: '5', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
-            {ig: '31a89b20-saf3-11e9-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '5', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-11e9-b10b-e5acc7269da7', id: 5, title: 'Anna - Raum 2',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Anna' , type:'event'},
-            {ig: '31a89b20-77da-assf-b10b-e5acc7269da7', id: 10, title: 'Anna - Raum 2',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Anna' , type:'event'},
-            {ig: '31a89b20-xxva-a4af-b10b-e5acc7269da7', id: 14, title: 'Lisa - Raum 4',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Lisa' , type:'event'},
-            {ig: '31a89b20-2eav-11e9-sdas-e5acc7269da7', id: 14, title: 'Anna - Telefon',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Anna' , type:'event'},
-            {ig: '31a89b20-ba5a-11e9-b10b-e5acc7269da7', id: 17, title: 'Anna - Telefon',year: '2019', month: '5', content: 'Welcome to learning React!', prio: 'Anna' , type:'event'},
-            {ig: '31a89b20-bvs4-11e9-b10b-e5acc7269da7', id: 23, title: 'Marie - Raum 3',year: '2019', month: '5', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
-
-            {ig: '31a89b20-77da-gass-10b-e5acc7269da7', id: 3, title: 'Marie - Raum 4', year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-axav-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-11e9-sdaf-e5acc7269da7', id: 5, title: 'Anna - Raum 1',year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Anna' , type:'event'},
-            {ig: '31a89b20-77da-11e9-vcxg-e5acc7269da7', id: 5, title: 'Lisa - Raum 2',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Lisa' , type:'event'},
-            {ig: '31a89b20-77da-11e9-ncvg-e5acc7269da7', id: 8, title: 'Anna - Raum 3',year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Anna' , type:'event'},
-            {ig: '31a89b20-77da-11e9-fdg4-e5acc7269da7', id: 11, title: 'Marie - Raum 2',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-11e9-se5z-e5acc7269da7', id: 19, title: 'Lisa - Raum 4',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Lisa' , type:'event'},
-            {ig: '31a89b20-77da-fsd6-b10b-e5acc7269da7', id: 23, title: 'Marie - Telefon',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-11e9-fsd4-e5acc7269da7', id: 25, title: 'Marie - Telefon',year: '2019', month: '4', content: 'Welcome to learning React!', prio: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-356g-dsfg-e5acc7269da7', id: 28, title: 'Anna - Raum 3',year: '2019', month: '4', content: 'You can install React from npm.' , prio: 'Anna' , type:'event'},
+            {ig: '31a89b20-77da-11e9-b10b-e5acc7269da7', id: 2, title: 'Lisa - Raum 4', year: '2019', month: '5', employee: 'Lisa' , type:'event'},
+            {ig: '31a89b20-3aft-11e9-b10b-e5acc7269sa7', id: 2, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , type:'event'},
+            {ig: '31a89b20-saf3-11e9-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , type:'event'},
+            {ig: '31a89b20-77da-11e9-b10b-e5acc7269da7', id: 5, title: 'Anna - Raum 2',year: '2019', month: '5', employee: 'Anna' , type:'event'},
+            {ig: '31a89b20-77da-assf-b10b-e5acc7269da7', id: 10, title: 'Anna - Raum 2',year: '2019', month: '5', employee: 'Anna' , type:'event'},
+            {ig: '31a89b20-xxva-a4af-b10b-e5acc7269da7', id: 14, title: 'Lisa - Raum 4',year: '2019', month: '5', employee: 'Lisa' , type:'event'},
+            {ig: '31a89b20-2eav-11e9-sdas-e5acc7269da7', id: 14, title: 'Anna - Telefon',year: '2019', month: '5', employee: 'Anna' , type:'event'},
+            {ig: '31a89b20-ba5a-11e9-b10b-e5acc7269da7', id: 17, title: 'Anna - Telefon',year: '2019', month: '5', employee: 'Anna' , type:'event'},
+            {ig: '31a89b20-bvs4-11e9-b10b-e5acc7269da7', id: 23, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , type:'event'},
+            {ig: '31a89b20-77da-gass-10b-e5acc7269da7', id: 3, title: 'Marie - Raum 4', year: '2019', month: '4', employee: 'Marie' , type:'event'},
+            {ig: '31a89b20-77da-axav-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '4', employee: 'Marie' , type:'event'},
+            {ig: '31a89b20-77da-11e9-sdaf-e5acc7269da7', id: 5, title: 'Anna - Raum 1',year: '2019', month: '4', employee: 'Anna' , type:'event'},
+            {ig: '31a89b20-77da-11e9-vcxg-e5acc7269da7', id: 5, title: 'Lisa - Raum 2',year: '2019', month: '4', employee: 'Lisa' , type:'event'},
+            {ig: '31a89b20-77da-11e9-ncvg-e5acc7269da7', id: 8, title: 'Anna - Raum 3',year: '2019', month: '4', employee: 'Anna' , type:'event'},
+            {ig: '31a89b20-77da-11e9-fdg4-e5acc7269da7', id: 11, title: 'Marie - Raum 2',year: '2019', month: '4', employee: 'Marie' , type:'event'},
+            {ig: '31a89b20-77da-11e9-se5z-e5acc7269da7', id: 19, title: 'Lisa - Raum 4',year: '2019', month: '4', employee: 'Lisa' , type:'event'},
+            {ig: '31a89b20-77da-fsd6-b10b-e5acc7269da7', id: 23, title: 'Marie - Telefon',year: '2019', month: '4', employee: 'Marie' , type:'event'},
+            {ig: '31a89b20-77da-11e9-fsd4-e5acc7269da7', id: 25, title: 'Marie - Telefon',year: '2019', month: '4', employee: 'Marie' , type:'event'},
+            {ig: '31a89b20-77da-356g-dsfg-e5acc7269da7', id: 28, title: 'Anna - Raum 3',year: '2019', month: '4', employee: 'Anna' , type:'event'},
         ],
+        ig: uuidv1(),
+        id: '',
+
+        employee: 'Anna' ,
+        employee_room: 'Raum 1',
+        type:'event',
+        new_entry: '',
+        title: '',
+        d: '', m: '', y: '',
 
     }
 
@@ -167,14 +175,10 @@ export default class Calender extends React.Component {
         }
     };
 
-    onAddEntryClick = (e, day, month, year) => {
-        this.props.onAddEntryClick && this.props.onAddEntryClick(e, day, month, year);
-        console.log("tt"+ this.props.entry_values.new_entry);
-        /*
-        let data_copy = this.state.data;
-        data_copy.push(this.props.entry_values);
+    onAddEntryClick = () => {
         this.setState({
-            data: data_copy*/
+            displayAddEvent: true
+        })
 
     };
 
@@ -189,8 +193,53 @@ export default class Calender extends React.Component {
         );
     };
 
-    render() {
+    showEventEditor = (cur_day, cur_month, cur_year) => {
+        this.setState({
+            displayAddEvent: !this.state.displayAddEvent,
+            d: cur_day,
+            m: cur_month,
+            y: cur_year
+        })
+    }
 
+    closeEntry = () => {
+        this.setState({
+            displayAddEvent: false
+        })
+    }
+
+    addNewEntry = () => {
+        let data_copy = this.state.data;
+        data_copy.push({ig: uuidv1(),
+            id: this.state.d,
+            title: this.state.employee + ' - ' + this.state.employee_room + ' : ' + this.state.title,
+            year: this.state.y,
+            month: this.state.m,
+            employee: this.state.employee ,
+            type:'event',
+
+            new_entry: ''});
+        this.setState({
+            data: data_copy,
+            displayAddEvent: false
+        })
+    }
+
+    handleInputChange = (event) => {
+        event.preventDefault()
+
+        this.setState({
+            [event.target.name]: event.target.value,
+        })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+    }
+
+
+    render() {
+        console.log(this.state.data)
         let weeknames = this.weeknames.map((day) => {
             return (
                 <th className="weekdays-td col-sm-2" key={day}>{day}</th>
@@ -206,30 +255,22 @@ export default class Calender extends React.Component {
         }
 
         let daysInMonth = [];
-
-        /* Deal with the copy and the original data > this infinite loop ....
-        let data_copy = this.state.data;
-        data_copy.push(this.props.entry_values);
-        this.setState({
-            data: data_copy
-        });*/
-
         for(let d = 1; d <= this.daysInMonth(); d++) {
 
             let className = (d == this.currentDay() ? "day current-day": "day");
             daysInMonth.push(
                 <td className="col-sm-2" key={d} >
                     <div className={className}>{d}</div>
-                    <div className="add-entry" onClick={(e) => {this.onAddEntryClick(e, d, this.currentMonth(), this.year())}}>+</div>
+                    <div className="add-entry" onClick={(e) => {this.showEventEditor(d,this.currentMonth(),this.year() )}}>+</div>
                     <div className="clear"/>
                     <hr/>
                     <div className="black">
                         {this.state.data.map(key => {
+
                             if (d === key.id && this.currentMonth() === key.month && this.year() === key.year) {
                                 return (
-                                    <div key={key.ig} className={[key.prio, key.type].join(" ")}> {key.title} </div>
+                                    <div key={key.ig} className={[key.employee, key.type].join(" ")}> {key.title} </div>
                                 );
-
                             }
                         })}
                     </div>
@@ -265,18 +306,43 @@ export default class Calender extends React.Component {
            );
         });
 
-
-
         return(
-
             <div className="container">
+                {this.state.displayAddEvent && (
+                    <div className="add-event-entry">
+                        <div className="closeEntryX" onClick={this.closeEntry}>X</div>
+                        <div className="clear"/>
+                        <h5>Neuen Eintrag vornehmen</h5>
+                        <form onSubmit={this.handleSubmit} >
+                            <div className="form-layout">
+                                <label>Tätigkeit:</label> <br/>
+                                <input type='text' placeholder='' name='title' onChange={this.handleInputChange} />
+                                <br/>
+                                <label>Mitarbeiter:</label> <br/>
+                                <select value={this.state.employee} name='employee' onChange={this.handleInputChange}>
+                                    <option value="Anna" >Anna</option>
+                                    <option value="Lisa">Lisa</option>
+                                    <option value="Marie">Marie</option>
+                                </select>
+                                <br/>
+                                <label>Raum:</label> <br/>
+                                <select value={this.state.employee_room} name='employee_room' onChange={this.handleInputChange}>
+                                    <option value="Raum 1" >Raum 1</option>
+                                    <option value="Raum 2">Raum 2</option>
+                                    <option value="Raum 3">Raum 3</option>
+                                </select>
+                                <br/><br/>
+                                <hr/>
+                                <button className="addNewEntryBtn" onClick={this.addNewEntry} >Eintragen</button>
+                            </div>
+                        </form>
+                    </div>
+                )}
 
                 <div className="chooser-display">
                     <this.MonthNav />
                     <this.YearNav />
                 </div>
-                <div className="clear"/>
-
                 <div className="clear"/>
                 <div className="table-responsive calender-body">
                     <table className="table">

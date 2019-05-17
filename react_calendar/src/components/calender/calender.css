@@ -151,16 +151,51 @@ ul {
     background-color: antiquewhite;
     padding: 0 0 0 5px;
     border-radius: 5px;
+    overflow: auto;
 }
 
 .Lisa {
     background-color: mediumaquamarine;
     padding: 0 0 0 5px;
     border-radius: 5px;
+    overflow: auto;
 }
 
 .Marie {
     background-color: coral;
     padding: 0 0 0 5px;
     border-radius: 5px;
+    overflow: auto;
+}
+
+
+.add-event-entry {
+    z-index: 1000;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid;
+    box-shadow: 5px 5px 10px #888888;
+}
+
+.closeEntryX {
+    text-align: right;
+    font-weight: bold;
+    font-size: 17px;
+    border-bottom: 1px solid #dee2e6;
+    width: 100%;
+}
+
+.addNewEntryBtn {
+    float: right;
+    background-color: turquoise;
+    border: 1px solid darkturquoise;
+}
+
+.addNewEntryBtn:hover {
+    background-color: darkturquoise;
 }
