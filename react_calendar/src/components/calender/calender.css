@@ -1,6 +1,5 @@
 .current-day {
     background-color: turquoise;
-    /* padding: 5px; */
     border-radius: 100px;
     width: 35px;
     text-align: center;
@@ -152,6 +151,7 @@ ul {
     padding: 0 0 0 5px;
     border-radius: 5px;
     overflow: auto;
+    width: 95%;
 }
 
 .Lisa {
@@ -159,6 +159,7 @@ ul {
     padding: 0 0 0 5px;
     border-radius: 5px;
     overflow: auto;
+    width: 95%;
 }
 
 .Marie {
@@ -166,6 +167,12 @@ ul {
     padding: 0 0 0 5px;
     border-radius: 5px;
     overflow: auto;
+    width: 95%;
+}
+
+.event {
+    float: left;
+
 }
 
 
@@ -188,6 +195,8 @@ ul {
     font-size: 17px;
     border-bottom: 1px solid #dee2e6;
     width: 100%;
+    cursor: pointer;
+    padding-bottom: 10px;
 }
 
 .addNewEntryBtn {
@@ -198,4 +207,18 @@ ul {
 
 .addNewEntryBtn:hover {
     background-color: darkturquoise;
+}
+
+textarea#entry_textarea {
+    width: 100%;
+}
+
+.detail_content_bereich {
+    padding-top: 20px;
+    /* border-top: 1px solid #dee2e6; */
+}
+
+.detail_content {
+    border: 1px solid #dee2e6;
+    padding: 5px;
 }

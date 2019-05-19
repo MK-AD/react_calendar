@@ -13,37 +13,42 @@ export default class Calender extends React.Component {
         showMonthPopup: false,
         showYearPopup: false,
         displayAddEvent: false,
+        displayShowDetails: false,
         data: [
-            {ig: '31a89b20-77da-11e9-b10b-e5acc7269da7', id: 2, title: 'Lisa - Raum 4', year: '2019', month: '5', employee: 'Lisa' , type:'event'},
-            {ig: '31a89b20-3aft-11e9-b10b-e5acc7269sa7', id: 2, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , type:'event'},
-            {ig: '31a89b20-saf3-11e9-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-11e9-b10b-e5acc7269da7', id: 5, title: 'Anna - Raum 2',year: '2019', month: '5', employee: 'Anna' , type:'event'},
-            {ig: '31a89b20-77da-assf-b10b-e5acc7269da7', id: 10, title: 'Anna - Raum 2',year: '2019', month: '5', employee: 'Anna' , type:'event'},
-            {ig: '31a89b20-xxva-a4af-b10b-e5acc7269da7', id: 14, title: 'Lisa - Raum 4',year: '2019', month: '5', employee: 'Lisa' , type:'event'},
-            {ig: '31a89b20-2eav-11e9-sdas-e5acc7269da7', id: 14, title: 'Anna - Telefon',year: '2019', month: '5', employee: 'Anna' , type:'event'},
-            {ig: '31a89b20-ba5a-11e9-b10b-e5acc7269da7', id: 17, title: 'Anna - Telefon',year: '2019', month: '5', employee: 'Anna' , type:'event'},
-            {ig: '31a89b20-bvs4-11e9-b10b-e5acc7269da7', id: 23, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-gass-10b-e5acc7269da7', id: 3, title: 'Marie - Raum 4', year: '2019', month: '4', employee: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-axav-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '4', employee: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-11e9-sdaf-e5acc7269da7', id: 5, title: 'Anna - Raum 1',year: '2019', month: '4', employee: 'Anna' , type:'event'},
-            {ig: '31a89b20-77da-11e9-vcxg-e5acc7269da7', id: 5, title: 'Lisa - Raum 2',year: '2019', month: '4', employee: 'Lisa' , type:'event'},
-            {ig: '31a89b20-77da-11e9-ncvg-e5acc7269da7', id: 8, title: 'Anna - Raum 3',year: '2019', month: '4', employee: 'Anna' , type:'event'},
-            {ig: '31a89b20-77da-11e9-fdg4-e5acc7269da7', id: 11, title: 'Marie - Raum 2',year: '2019', month: '4', employee: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-11e9-se5z-e5acc7269da7', id: 19, title: 'Lisa - Raum 4',year: '2019', month: '4', employee: 'Lisa' , type:'event'},
-            {ig: '31a89b20-77da-fsd6-b10b-e5acc7269da7', id: 23, title: 'Marie - Telefon',year: '2019', month: '4', employee: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-11e9-fsd4-e5acc7269da7', id: 25, title: 'Marie - Telefon',year: '2019', month: '4', employee: 'Marie' , type:'event'},
-            {ig: '31a89b20-77da-356g-dsfg-e5acc7269da7', id: 28, title: 'Anna - Raum 3',year: '2019', month: '4', employee: 'Anna' , type:'event'},
+            {ig: '31a89b20-77da-11e9-b10b-e5acc7269da7', id: 2, title: 'Lisa - Raum 4', year: '2019', month: '5', employee: 'Lisa' , employee_room: 'Raum 4', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-3aft-11e9-b10b-e5acc7269sa7', id: 2, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-saf3-11e9-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-1129-b10b-e5acc7269da7', id: 5, title: 'Anna - Raum 2',year: '2019', month: '5', employee: 'Anna' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-assf-b10b-e5acc7269da7', id: 10, title: 'Anna - Raum 2',year: '2019', month: '5', employee: 'Anna' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-xxva-a4af-b10b-e5acc7269da7', id: 14, title: 'Lisa - Raum 4',year: '2019', month: '5', employee: 'Lisa' , employee_room: 'Raum 4',type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-2eav-11e9-sdas-e5acc7269da7', id: 14, title: 'Anna - Telefon',year: '2019', month: '5', employee: 'Anna' , employee_room: '', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-ba5a-11e9-b10b-e5acc7269da7', id: 17, title: 'Anna - Telefon',year: '2019', month: '5', employee: 'Anna' , employee_room: '', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-bvs4-11e9-b10b-e5acc7269da7', id: 23, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-gass-10b-e5acc7269da7', id: 3, title: 'Marie - Raum 4', year: '2019', month: '4', employee: 'Marie' , employee_room: 'Raum 4', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-axav-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '4', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-sdaf-e5acc7269da7', id: 5, title: 'Anna - Raum 1',year: '2019', month: '4', employee: 'Anna' , employee_room: 'Raum 1', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-vcxg-e5acc7269da7', id: 5, title: 'Lisa - Raum 2',year: '2019', month: '4', employee: 'Lisa' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-ncvg-e5acc7269da7', id: 8, title: 'Anna - Raum 3',year: '2019', month: '4', employee: 'Anna' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-fdg4-e5acc7269da7', id: 11, title: 'Marie - Raum 2',year: '2019', month: '4', employee: 'Marie' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-se5z-e5acc7269da7', id: 19, title: 'Lisa - Raum 4',year: '2019', month: '4', employee: 'Lisa' , employee_room: 'Raum 4', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-fsd6-b10b-e5acc7269da7', id: 23, title: 'Marie - Telefon',year: '2019', month: '4', employee: 'Marie' , type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-fsd4-e5acc7269da7', id: 25, title: 'Marie - Telefon',year: '2019', month: '4', employee: 'Marie' , type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-356g-dsfg-e5acc7269da7', id: 28, title: 'Anna - Raum 3',year: '2019', month: '4', employee: 'Anna' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit' },
         ],
         ig: uuidv1(),
         id: '',
-
+        content: '',
         employee: 'Anna' ,
         employee_room: 'Raum 1',
         type:'event',
         new_entry: '',
         title: '',
-        d: '', m: '', y: '',
-
+        d: '',
+        m: '',
+        y: '',
+        display_day: '',
+        display_month: '',
+        display_year: ''
     }
 
     constructor(props) {
@@ -85,11 +90,11 @@ export default class Calender extends React.Component {
     SelectList = (props) => {
         let popup = props.data.map((data) => {
             return (
-                <a href="#" onClick={(e) => {this.onSelectChange(e, data)}}><div className="month-overview" key={data}>
+                <div className="month-overview" key={data} onClick={(e) => {this.onSelectChange(e, data)}}>
                     <a href="#" onClick={(e) => {this.onSelectChange(e, data)}}>
                         {data}
                     </a>
-                </div></a>
+                </div>
             );
         });
 
@@ -119,7 +124,7 @@ export default class Calender extends React.Component {
             <div className="month-display label-month " onClick={(e)=> {this.onChangeMonth(e, this.month())}}>
                 {this.month()}
                 {this.state.showMonthPopup &&
-                    <this.SelectList data={this.months} />
+                    <this.SelectList key="" data={this.months} />
                 }
             </div>
         );
@@ -202,9 +207,20 @@ export default class Calender extends React.Component {
         })
     }
 
+    showEventDetails = (cur_day, cur_month, cur_year, display_key) => {
+        this.setState({
+            displayShowDetails: !this.state.displayShowDetails,
+            display_day: cur_day,
+            display_month: cur_month,
+            display_year: cur_year,
+            display_ig: display_key
+        })
+    }
+
     closeEntry = () => {
         this.setState({
-            displayAddEvent: false
+            displayAddEvent: false,
+            displayShowDetails: false
         })
     }
 
@@ -217,7 +233,8 @@ export default class Calender extends React.Component {
             month: this.state.m,
             employee: this.state.employee ,
             type:'event',
-
+            employee_room: this.state.employee_room,
+            content: this.state.content,
             new_entry: ''});
         this.setState({
             data: data_copy,
@@ -266,10 +283,9 @@ export default class Calender extends React.Component {
                     <hr/>
                     <div className="black">
                         {this.state.data.map(key => {
-
                             if (d === key.id && this.currentMonth() === key.month && this.year() === key.year) {
                                 return (
-                                    <div key={key.ig} className={[key.employee, key.type].join(" ")}> {key.title} </div>
+                                    <div key={key.ig} className={[key.employee, key.type].join(" ")} onClick={(e) => {this.showEventDetails(d,key.month,key.year,key.ig )}}> {key.title} </div>
                                 );
                             }
                         })}
@@ -331,11 +347,41 @@ export default class Calender extends React.Component {
                                     <option value="Raum 2">Raum 2</option>
                                     <option value="Raum 3">Raum 3</option>
                                 </select>
+                                <br/>
+                                <label>Inhalt:</label> <br/>
+                                <textarea id='entry_textarea' placeholder='' name='content' onChange={this.handleInputChange} />
+                                <br/>
                                 <br/><br/>
                                 <hr/>
                                 <button className="addNewEntryBtn" onClick={this.addNewEntry} >Eintragen</button>
                             </div>
                         </form>
+                    </div>
+                )}
+
+                {this.state.displayShowDetails && (
+                    <div className="add-event-entry">
+                        <div className="clear"/>
+                        {this.state.data.map(key => {
+                            if (this.state.display_ig === key.ig) {
+                                return (
+                                    <div key={key.ig}>
+                                        <div onClick={this.closeEntry}>
+                                            <div className={[key.employee, key.type].join(" ")}>
+                                                {key.employee} - {key.employee_room}
+                                            </div>
+                                            <div className="closeEntryX">X</div>
+                                        </div>
+                                        <div className="clear"/>
+                                        <div className="detail_content_bereich">
+                                            <label>Inhalt:</label><br/>
+                                            <div className="detail_content"> {key.content}</div>
+                                        </div>
+                                    </div>
+
+                                );
+                            }
+                        })}
                     </div>
                 )}
 
