@@ -15,25 +15,25 @@ export default class Calender extends React.Component {
         displayAddEvent: false,
         displayShowDetails: false,
         data: [
-            {ig: '31a89b20-77da-11e9-b10b-e5acc7269da7', id: 2, title: 'Lisa - Raum 4', year: '2019', month: '5', employee: 'Lisa' , employee_room: 'Raum 4', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-3aft-11e9-b10b-e5acc7269sa7', id: 2, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-saf3-11e9-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-1129-b10b-e5acc7269da7', id: 5, title: 'Anna - Raum 2',year: '2019', month: '5', employee: 'Anna' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-assf-b10b-e5acc7269da7', id: 10, title: 'Anna - Raum 2',year: '2019', month: '5', employee: 'Anna' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-xxva-a4af-b10b-e5acc7269da7', id: 14, title: 'Lisa - Raum 4',year: '2019', month: '5', employee: 'Lisa' , employee_room: 'Raum 4',type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-2eav-11e9-sdas-e5acc7269da7', id: 14, title: 'Anna - Telefon',year: '2019', month: '5', employee: 'Anna' , employee_room: '', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-ba5a-11e9-b10b-e5acc7269da7', id: 17, title: 'Anna - Telefon',year: '2019', month: '5', employee: 'Anna' , employee_room: '', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-bvs4-11e9-b10b-e5acc7269da7', id: 23, title: 'Marie - Raum 3',year: '2019', month: '5', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-gass-10b-e5acc7269da7', id: 3, title: 'Marie - Raum 4', year: '2019', month: '4', employee: 'Marie' , employee_room: 'Raum 4', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-axav-b10b-e5acc7269da7', id: 5, title: 'Marie - Raum 3',year: '2019', month: '4', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-11e9-sdaf-e5acc7269da7', id: 5, title: 'Anna - Raum 1',year: '2019', month: '4', employee: 'Anna' , employee_room: 'Raum 1', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-11e9-vcxg-e5acc7269da7', id: 5, title: 'Lisa - Raum 2',year: '2019', month: '4', employee: 'Lisa' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-11e9-ncvg-e5acc7269da7', id: 8, title: 'Anna - Raum 3',year: '2019', month: '4', employee: 'Anna' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-11e9-fdg4-e5acc7269da7', id: 11, title: 'Marie - Raum 2',year: '2019', month: '4', employee: 'Marie' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-11e9-se5z-e5acc7269da7', id: 19, title: 'Lisa - Raum 4',year: '2019', month: '4', employee: 'Lisa' , employee_room: 'Raum 4', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-fsd6-b10b-e5acc7269da7', id: 23, title: 'Marie - Telefon',year: '2019', month: '4', employee: 'Marie' , type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-11e9-fsd4-e5acc7269da7', id: 25, title: 'Marie - Telefon',year: '2019', month: '4', employee: 'Marie' , type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
-            {ig: '31a89b20-77da-356g-dsfg-e5acc7269da7', id: 28, title: 'Anna - Raum 3',year: '2019', month: '4', employee: 'Anna' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit' },
+            {ig: '31a89b20-77da-11e9-b10b-e5acc7269da7', id: 2, title: 'Gruppentermin', year: '2019', month: '5', employee: 'Lisa' , employee_room: 'Raum 4', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-3aft-11e9-b10b-e5acc7269sa7', id: 2, title: 'Einzeltermin',year: '2019', month: '5', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-saf3-11e9-b10b-e5acc7269da7', id: 5, title: 'Einzeltermin',year: '2019', month: '5', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-1129-b10b-e5acc7269da7', id: 5, title: 'Einzeltermin',year: '2019', month: '5', employee: 'Anna' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-assf-b10b-e5acc7269da7', id: 10, title: 'Telefontermin',year: '2019', month: '5', employee: 'Anna' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-xxva-a4af-b10b-e5acc7269da7', id: 14, title: 'Telefontermin',year: '2019', month: '5', employee: 'Lisa' , employee_room: 'Raum 4',type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-2eav-11e9-sdas-e5acc7269da7', id: 14, title: 'Einzeltermin',year: '2019', month: '5', employee: 'Anna' , employee_room: '', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-ba5a-11e9-b10b-e5acc7269da7', id: 17, title: 'Gruppentermin',year: '2019', month: '5', employee: 'Anna' , employee_room: '', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-bvs4-11e9-b10b-e5acc7269da7', id: 23, title: 'Gruppentermin',year: '2019', month: '5', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-gass-10b-e5acc7269da7', id: 3, title: 'Einzeltermin', year: '2019', month: '4', employee: 'Marie' , employee_room: 'Raum 4', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-axav-b10b-e5acc7269da7', id: 5, title: 'Telefontermin',year: '2019', month: '4', employee: 'Marie' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-sdaf-e5acc7269da7', id: 5, title: 'Einzeltermin',year: '2019', month: '4', employee: 'Anna' , employee_room: 'Raum 1', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-vcxg-e5acc7269da7', id: 5, title: 'Telefontermin',year: '2019', month: '4', employee: 'Lisa' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-ncvg-e5acc7269da7', id: 8, title: 'Einzeltermin',year: '2019', month: '4', employee: 'Anna' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-fdg4-e5acc7269da7', id: 11, title: 'Einzeltermin',year: '2019', month: '4', employee: 'Marie' , employee_room: 'Raum 2', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-se5z-e5acc7269da7', id: 19, title: 'Telefontermin',year: '2019', month: '4', employee: 'Lisa' , employee_room: 'Raum 4', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-fsd6-b10b-e5acc7269da7', id: 23, title: 'Einzeltermin',year: '2019', month: '4', employee: 'Marie' , type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-11e9-fsd4-e5acc7269da7', id: 25, title: 'Telefontermin',year: '2019', month: '4', employee: 'Marie' , type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit'},
+            {ig: '31a89b20-77da-356g-dsfg-e5acc7269da7', id: 28, title: 'Einzeltermin',year: '2019', month: '4', employee: 'Anna' , employee_room: 'Raum 3', type:'event', content: 'Lorem ipsum dolor sit amet, consectetur adipisici elit Lorem ipsum dolor sit amet, consectetur adipisici elit' },
         ],
         ig: uuidv1(),
         id: '',
@@ -80,6 +80,12 @@ export default class Calender extends React.Component {
     currentMonth = () => {
         return this.state.dateContext.format("M");
     };
+
+    realCurrentMonth = () => {
+        var d = new Date();
+        var n = d.getMonth();
+        return n
+    }
 
     firstDayOfMonth = () => {
         let dateContext = this.state.dateContext;
@@ -228,7 +234,7 @@ export default class Calender extends React.Component {
         let data_copy = this.state.data;
         data_copy.push({ig: uuidv1(),
             id: this.state.d,
-            title: this.state.employee + ' - ' + this.state.employee_room + ' : ' + this.state.title,
+            title: this.state.title,
             year: this.state.y,
             month: this.state.m,
             employee: this.state.employee ,
@@ -254,9 +260,7 @@ export default class Calender extends React.Component {
         event.preventDefault()
     }
 
-
     render() {
-        console.log(this.state.data)
         let weeknames = this.weeknames.map((day) => {
             return (
                 <th className="weekdays-td col-sm-2" key={day}>{day}</th>
@@ -273,8 +277,7 @@ export default class Calender extends React.Component {
 
         let daysInMonth = [];
         for(let d = 1; d <= this.daysInMonth(); d++) {
-
-            let className = (d == this.currentDay() ? "day current-day": "day");
+            let className = ((d == this.currentDay() && this.currentMonth() -1 === this.realCurrentMonth()) ? "day current-day": "day");
             daysInMonth.push(
                 <td className="col-sm-2" key={d} >
                     <div className={className}>{d}</div>
@@ -285,7 +288,7 @@ export default class Calender extends React.Component {
                         {this.state.data.map(key => {
                             if (d === key.id && this.currentMonth() === key.month && this.year() === key.year) {
                                 return (
-                                    <div key={key.ig} className={[key.employee, key.type].join(" ")} onClick={(e) => {this.showEventDetails(d,key.month,key.year,key.ig )}}> {key.title} </div>
+                                    <div key={key.ig} className={[key.employee, key.type].join(" ")} onClick={(e) => {this.showEventDetails(d,key.month,key.year,key.ig )}}> {key.employee} - {key.employee_room} </div>
                                 );
                             }
                         })}
@@ -332,7 +335,7 @@ export default class Calender extends React.Component {
                         <form onSubmit={this.handleSubmit} >
                             <div className="form-layout">
                                 <label>Tätigkeit:</label> <br/>
-                                <input type='text' placeholder='' name='title' onChange={this.handleInputChange} />
+                                <input type='text' placeholder='Telefontermin' name='title' onChange={this.handleInputChange} />
                                 <br/>
                                 <label>Mitarbeiter:</label> <br/>
                                 <select value={this.state.employee} name='employee' onChange={this.handleInputChange}>
@@ -373,12 +376,15 @@ export default class Calender extends React.Component {
                                             <div className="closeEntryX">X</div>
                                         </div>
                                         <div className="clear"/>
+
                                         <div className="detail_content_bereich">
+                                            <label>Tätigkeit:</label> <br/>
+                                            <div className="detail_content"> {key.title}</div>
+                                            <div className="clear"/>
                                             <label>Inhalt:</label><br/>
                                             <div className="detail_content"> {key.content}</div>
                                         </div>
                                     </div>
-
                                 );
                             }
                         })}
