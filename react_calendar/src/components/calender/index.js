@@ -58,7 +58,7 @@ export default class Calender extends React.Component {
         this.style.width = this.width; // add this
     }
 
-    weeknames = moment.weekdays();
+    weeknames = moment.weekdays(true);
     months = moment.months();
 
     year = () => {
